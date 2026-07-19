@@ -1,1 +1,95 @@
-[]
+[
+  {
+    "id": "c1",
+    "courseCode": "ME 201",
+    "courseName": "Fluid Mechanics",
+    "department": "Thermal & Fluids",
+    "credits": 6,
+    "reviews": [
+      {
+        "id": "r1",
+        "type": "course",
+        "courseCode": "ME 201",
+        "courseName": "Fluid Mechanics",
+        "department": "Thermal & Fluids",
+        "semester": "Autumn",
+        "year": 2025,
+        "professor": "Prof. Amit Agrawal",
+        "credits": 6,
+        "difficulty": 4,
+        "workloadHoursPerWeek": 8,
+        "attendancePolicy": "Strict 75% attendance enforced, DX grade awarded if lower.",
+        "gradingBreakdown": "Quizzes: 20%, Midsem: 35%, Endsem: 45%",
+        "summary": "Fluid Mechanics is one of the most fundamental courses in mechanical engineering. Prof. Agrawal is exceptionally clear, but the exams require deep conceptual understanding. Do not skip tutorials as they directly reflect midsem/endsem questions. The grading is relatively fair but requires consistent effort.",
+        "tags": ["math-heavy", "conceptual", "strict-attendance"],
+        "reviewerName": "Rohan Deshmukh",
+        "reviewerBatch": "23B0300",
+        "reviewerEmail": "rohan.desh@iitb.ac.in",
+        "status": "approved",
+        "submittedAt": "2026-01-15T12:00:00Z"
+      }
+    ]
+  },
+  {
+    "id": "c2",
+    "courseCode": "ME 219",
+    "courseName": "Solid Mechanics",
+    "department": "Design",
+    "credits": 8,
+    "reviews": [
+      {
+        "id": "r2",
+        "type": "course",
+        "courseCode": "ME 219",
+        "courseName": "Solid Mechanics",
+        "department": "Design",
+        "semester": "Autumn",
+        "year": 2025,
+        "professor": "Prof. P. M. Mujumdar",
+        "credits": 8,
+        "difficulty": 5,
+        "workloadHoursPerWeek": 12,
+        "attendancePolicy": "Recommended, but not strictly checked. Understanding lecture derivations is critical.",
+        "gradingBreakdown": "Assignments: 15%, Quizzes: 20%, Midsem: 30%, Endsem: 35%",
+        "summary": "Very high workload since it's an 8-credit course. Focuses on stress analysis, beams, torsion, and energy methods. Solving the textbook (Gere & Timoshenko or Shames) is highly recommended. The quizzes are challenging, and the grading curve is steep, but the concepts are useful for all future design courses.",
+        "tags": ["heavy-workload", "math-heavy", "problem-solving"],
+        "reviewerName": "Neha Sen",
+        "reviewerBatch": "23B0321",
+        "reviewerEmail": "nehasen@iitb.ac.in",
+        "status": "approved",
+        "submittedAt": "2026-01-18T14:30:00Z"
+      }
+    ]
+  },
+  {
+    "id": "c3",
+    "courseCode": "ME 306",
+    "courseName": "Heat Transfer",
+    "department": "Thermal & Fluids",
+    "credits": 6,
+    "reviews": [
+      {
+        "id": "r3",
+        "type": "course",
+        "courseCode": "ME 306",
+        "courseName": "Heat Transfer",
+        "department": "Thermal & Fluids",
+        "semester": "Spring",
+        "year": 2026,
+        "professor": "Prof. Sandip Kumar Saha",
+        "credits": 6,
+        "difficulty": 3,
+        "workloadHoursPerWeek": 6,
+        "attendancePolicy": "Random attendance quizzes used for active participation marks.",
+        "gradingBreakdown": "Homework: 10%, Project: 15%, Midsem: 30%, Endsem: 45%",
+        "summary": "Heat Transfer covers conduction, convection, radiation, and heat exchangers. Professor Saha is very structured and friendly. The course is interesting and very applicable to real-world cooling and energy systems. The project is an excellent chance to score, so choose a good topic.",
+        "tags": ["project-included", "highly-applicable", "formula-heavy"],
+        "reviewerName": "Aditya Verma",
+        "reviewerBatch": "23B0334",
+        "reviewerEmail": "aditya.v@iitb.ac.in",
+        "status": "approved",
+        "submittedAt": "2026-06-05T09:15:00Z"
+      }
+    ]
+  }
+]

@@ -1,0 +1,36 @@
+[
+  {
+    "id": "e1",
+    "type": "experience",
+    "companyName": "Jaguar Land Rover",
+    "role": "Aerodynamics Research Intern",
+    "experienceType": "Core Internship",
+    "stipendOrCtc": "1 Lakh/month",
+    "difficulty": 4,
+    "selectionProcess": "1. Resume Shortlisting\n2. Technical Test (Fluid mechanics, Aero, CFD basics)\n3. Technical Interview (Focus on projects, boundary layer theory, wind tunnel testing)\n4. HR Interview (Why automotive, work culture fits)",
+    "summary": "Worked with the Aero-Thermal team on streamlining the rear chassis of an upcoming electric vehicle. The experience was incredibly rich, with access to high-performance computing clusters for CFD simulations. The mentors were super approachable and guided me through advanced meshing techniques. It was a steep learning curve but highly rewarding.",
+    "takeaways": "Brush up on Fluid Mechanics (ME 201) and boundary layer calculations. Prior experience with ANSYS Fluent or OpenFOAM is a massive plus. Be ready to explain all details of your fluid-related projects.",
+    "reviewerName": "Vikram Malhotra",
+    "reviewerBatch": "23B0345",
+    "reviewerEmail": "vikram.m@iitb.ac.in",
+    "status": "approved",
+    "submittedAt": "2026-02-10T10:00:00Z"
+  },
+  {
+    "id": "e2",
+    "type": "experience",
+    "companyName": "Boston Consulting Group (BCG)",
+    "role": "Summer Associate",
+    "experienceType": "Non-Core Internship",
+    "stipendOrCtc": "1.5 Lakh/month",
+    "difficulty": 5,
+    "selectionProcess": "1. Resume shortlisting based on CGPA and leadership roles\n2. Case Interviews (2 rounds with Consultants/Project Leaders)\n3. Partner Round (Fitment & Case summary)",
+    "summary": "Assisted in the digital transformation of an Indian steel manufacturer. My day-to-day involved data modeling, market research, and designing client slides. The work hours were long (often 12-14 hours/day), but the exposure to C-suite clients and strategic decision making was unmatched. Excellent learning environment.",
+    "takeaways": "Start practicing case prep at least 2 months before. Read 'Case in Point' and form a case group with friends to practice mock interviews. Show structured thinking and comfortable number crunching under pressure.",
+    "reviewerName": "Pooja Hegde",
+    "reviewerBatch": "23B0389",
+    "reviewerEmail": "pooja.h@iitb.ac.in",
+    "status": "approved",
+    "submittedAt": "2026-03-01T15:20:00Z"
+  }
+]

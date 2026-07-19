@@ -13,130 +13,49 @@ const links = [
 
 export default function Navbar() {
   const pathname = usePathname();
-  const [isVisible, setIsVisible] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [theme, setTheme] = useState<"light" | "dark">("dark");
 
   useEffect(() => {
-    setIsVisible(true);
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 10);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme") as "light" | "dark" | null;
+    const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const initialTheme = savedTheme || (systemDark ? "dark" : "light");
+    
+    setTheme(initialTheme);
+    document.documentElement.classList.remove("light", "dark");
+    document.documentElement.classList.add(initialTheme);
+  }, []);
+
+  const toggleTheme = () => {
+    const nextTheme = theme === "dark" ? "light" : "dark";
+    setTheme(nextTheme);
+    localStorage.setItem("theme", nextTheme);
+    document.documentElement.classList.remove("light", "dark");
+    document.documentElement.classList.add(nextTheme);
+  };
+
   return (
-    <>
-      <style dangerouslySetInnerHTML={{ __html: `
-        /* ── Top Navigation Bar ──────────────────────────── */
-        .top-bar {
-          position: fixed;
-          top: 0;
-          left: 0;
-          right: 0;
-          z-index: 100;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          padding: 0 clamp(1.5rem, 4vw, 3rem);
-          height: 72px;
-          background: rgba(0, 0, 0, 0.6);
-          backdrop-filter: blur(20px);
-          -webkit-backdrop-filter: blur(20px);
-          border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-          transform: translateY(-100%);
-          transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
-        }
-
-        .top-bar.visible {
-          transform: translateY(0);
-        }
-
-        .logo {
-          font-size: 1.25rem;
-          font-weight: 800;
-          color: #ffffff;
-          letter-spacing: -0.03em;
-          cursor: pointer;
-          user-select: none;
-          position: relative;
-          display: flex;
-          align-items: center;
-          gap: 10px;
-          text-decoration: none;
-        }
-
-        .logo-icon {
-          width: 24px;
-          height: 24px;
-          object-fit: contain;
-          filter: invert(1);
-          transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
-        }
-
-        .logo:hover .logo-icon {
-          transform: rotate(15deg) scale(1.1);
-        }
-
-        .nav-tabs {
-          display: flex;
-          align-items: center;
-          gap: 32px;
-          list-style: none;
-          margin: 0;
-          padding: 0;
-        }
-
-        .nav-tab {
-          font-family: 'Inter', sans-serif;
-          font-size: 0.85rem;
-          font-weight: 500;
-          color: rgba(255, 255, 255, 0.65);
-          text-decoration: none;
-          transition: color 0.3s ease, opacity 0.3s ease;
-          position: relative;
-          padding: 6px 0;
-          background: transparent !important;
-          border: none !important;
-          outline: none !important;
-          box-shadow: none !important;
-        }
-
-        .nav-tab::after {
-          content: '';
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          width: 0;
-          height: 2px;
-          background: #ffffff;
-          transition: width 0.3s cubic-bezier(0.22, 1, 0.36, 1);
-        }
-
-        .nav-tab:hover {
-          color: #ffffff;
-        }
-
-        .nav-tab:hover::after {
-          width: 100%;
-        }
-
-        .nav-tab.active {
-          color: #ffffff;
-          font-weight: 600;
-        }
-
-        .nav-tab.active::after {
-          width: 100%;
-        }
-
-        /* Hover style using :has() and :not() - dims other tabs when one is hovered */
-        .nav-tabs:has(.nav-tab:hover) .nav-tab:not(:hover) {
-          opacity: 0.35;
-        }
-      `}} />
-
-      <nav className={`top-bar ${isVisible ? "visible" : ""}`}>
-        <Link href="/" className="logo">
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b ${
+      scrolled 
+        ? "bg-[var(--bg)]/90 backdrop-blur-md border-[var(--border)] shadow-sm" 
+        : "bg-[var(--bg)] border-transparent"
+    }`}>
+      <div className="max-w-6xl mx-auto px-6 h-18 flex items-center justify-between">
+        <Link href="/" className="flex items-center gap-2 group">
           <svg
-            className="logo-icon"
+            className="w-5 h-5 text-[var(--text)] group-hover:opacity-70 transition-opacity duration-200"
             viewBox="0 0 24 24"
             fill="none"
-            stroke="#000000"
+            stroke="currentColor"
             strokeWidth="2.5"
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -144,25 +63,101 @@ export default function Navbar() {
             <circle cx="12" cy="12" r="3" />
             <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
           </svg>
-          <span>Mech DAMP</span>
+          <span className="font-extrabold text-lg tracking-tight text-[var(--text)] font-display">Mech DAMP</span>
         </Link>
 
-        <ul className="nav-tabs">
+        {/* Desktop Links */}
+        <div className="hidden md:flex items-center gap-8">
           {links.map((link) => {
             const isActive = pathname === link.href;
             return (
-              <li key={link.href}>
-                <Link
-                  href={link.href}
-                  className={`nav-tab ${isActive ? "active" : ""}`}
-                >
-                  {link.label}
-                </Link>
-              </li>
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`relative py-1 text-xs font-semibold tracking-wider uppercase transition-colors duration-200 ${
+                  isActive ? "text-[var(--text)]" : "text-[var(--text-muted)] hover:text-[var(--text)]"
+                }`}
+              >
+                {link.label}
+              </Link>
             );
           })}
-        </ul>
-      </nav>
-    </>
+          
+          {/* Subtle Theme Toggle Button */}
+          <button
+            onClick={toggleTheme}
+            aria-label="Toggle Theme"
+            className="text-[var(--text-muted)] hover:text-[var(--text)] p-1 rounded transition-colors cursor-pointer"
+          >
+            {theme === "dark" ? (
+              // Sun icon for light mode option
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                <circle cx="12" cy="12" r="5" />
+                <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+              </svg>
+            ) : (
+              // Moon icon for dark mode option
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+              </svg>
+            )}
+          </button>
+        </div>
+
+        {/* Mobile controls */}
+        <div className="flex items-center gap-4 md:hidden">
+          <button
+            onClick={toggleTheme}
+            aria-label="Toggle Theme"
+            className="text-[var(--text-muted)] hover:text-[var(--text)] p-1 rounded transition-colors cursor-pointer"
+          >
+            {theme === "dark" ? (
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                <circle cx="12" cy="12" r="5" />
+                <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+              </svg>
+            ) : (
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+              </svg>
+            )}
+          </button>
+
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="p-2 text-[var(--text-muted)] hover:text-[var(--text)] focus:outline-none cursor-pointer"
+          >
+            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              {isOpen ? (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
+              ) : (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M4 6h16M4 12h16M4 18h16" />
+              )}
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile Links */}
+      {isOpen && (
+        <div className="md:hidden border-t border-[var(--border)] bg-[var(--bg)] px-6 py-4 flex flex-col gap-4 animate-fade-in">
+          {links.map((link) => {
+            const isActive = pathname === link.href;
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => setIsOpen(false)}
+                className={`text-xs font-semibold uppercase tracking-wider py-2 transition-colors ${
+                  isActive ? "text-[var(--text)]" : "text-[var(--text-muted)] hover:text-[var(--text)]"
+                }`}
+              >
+                {link.label}
+              </Link>
+            );
+          })}
+        </div>
+      )}
+    </nav>
   );
 }

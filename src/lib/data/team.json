@@ -1,1 +1,44 @@
-[]
+[
+  {
+    "id": "1",
+    "name": "Aarav Mehta",
+    "role": "coordinator",
+    "year": "4th Year B.Tech",
+    "branch": "Mechanical Engineering",
+    "interests": ["Fluid Dynamics", "Robotics", "Automotive Systems"],
+    "email": "aarav.mehta@iitb.ac.in",
+    "whatsapp": "+91 98765 43210",
+    "photoUrl": "AM"
+  },
+  {
+    "id": "2",
+    "name": "Ishita Sharma",
+    "role": "coordinator",
+    "year": "4th Year Dual Degree",
+    "branch": "Mechanical + CIM",
+    "interests": ["Additive Manufacturing", "Optimization", "Machine Learning"],
+    "email": "ishita.sharma@iitb.ac.in",
+    "whatsapp": "+91 87654 32109",
+    "photoUrl": "IS"
+  },
+  {
+    "id": "3",
+    "name": "Kabir Deshmukh",
+    "role": "mentor",
+    "year": "3rd Year B.Tech",
+    "branch": "Mechanical Engineering",
+    "interests": ["Solid Mechanics", "Finite Element Analysis", "Aerospace"],
+    "email": "kabir.d@iitb.ac.in",
+    "photoUrl": "KD"
+  },
+  {
+    "id": "4",
+    "name": "Ananya Iyer",
+    "role": "mentor",
+    "year": "3rd Year B.Tech",
+    "branch": "Mechanical Engineering",
+    "interests": ["Heat Transfer", "Renewable Energy", "Thermodynamics"],
+    "email": "ananya.iyer@iitb.ac.in",
+    "photoUrl": "AI"
+  }
+]

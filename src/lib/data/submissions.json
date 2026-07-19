@@ -14,7 +14,11 @@
     "attendancePolicy": "Not mandatory, but attendance is helpful to understand steam tables.",
     "gradingBreakdown": "Best 3 of 4 Quizzes: 30%, Midsem: 30%, Endsem: 40%",
     "summary": "This course covers standard thermodynamic laws, cycles (Otto, Diesel, Rankine), and refrigeration. The professor teaches concepts through practical examples. Midsem and endsem are straightforward if you solve the tutorial problems. Make sure to learn how to read Steam Tables quickly as that saves a lot of time during exams.",
-    "tags": ["practical-examples", "straightforward", "formula-heavy"],
+    "tags": [
+      "practical-examples",
+      "straightforward",
+      "formula-heavy"
+    ],
     "reviewerName": "Sameer Kulkarni",
     "reviewerBatch": "24B0301",
     "reviewerEmail": "sameer.k@iitb.ac.in",
@@ -37,5 +41,31 @@
     "reviewerEmail": "anjali.p@iitb.ac.in",
     "status": "submitted",
     "submittedAt": "2026-07-12T16:20:00Z"
+  },
+  {
+    "type": "course",
+    "courseCode": "bbb",
+    "courseName": "hhh",
+    "department": "ghg",
+    "semester": "Autumn",
+    "year": 2026,
+    "professor": "hvhdvbhj",
+    "credits": 1,
+    "difficulty": 4,
+    "rating": 4,
+    "workloadHoursPerWeek": 1,
+    "attendanceMandatory": false,
+    "attendancePolicy": "yhagvv",
+    "gradingBreakdown": "gvvgg",
+    "summary": "bbbhbhjdsbhkskudhkuvxhjbjhhliioidwehfruihuhlsiqwdefhkrgjhbjkdfvxjh zvbxakhqlirtjhutkuxdgvxb jzsgcbavjdkfjhnek,jhakucfsgdvkhybuhbdgvku",
+    "tags": [
+      "vg"
+    ],
+    "reviewerName": "gvs",
+    "reviewerBatch": "24B2106",
+    "reviewerEmail": "vv@gmail.com",
+    "id": "97e76278-3d4a-4450-bced-5c8d827e97f0",
+    "status": "submitted",
+    "submittedAt": "2026-07-19T21:08:04.737Z"
   }
 ]

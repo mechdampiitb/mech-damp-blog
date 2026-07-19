@@ -10,18 +10,22 @@ export default async function Home() {
 
   return (
     <div className="flex flex-col gap-20 pb-20 animate-fade-in transition-all duration-300">
-      {/* Hero Section */}
-      <Hero coursesCount={courses.length} experiencesCount={totalExperiences} />
-
       {/* About Section */}
-      <section className="px-6 max-w-5xl mx-auto w-full border-t border-[var(--border)] pt-16 flex flex-col md:flex-row gap-8 md:gap-16 select-none animate-slide-up" style={{ animationDelay: "150ms" }}>
-        <div className="md:w-1/3 flex flex-col gap-2">
-          <span className="text-[10px] font-bold text-[var(--text-muted)] uppercase tracking-widest">About DAMP</span>
-          <h2 className="text-2xl md:text-3xl font-extrabold text-[var(--text)] tracking-tight">
-            The bridge between experience and confusion.
-          </h2>
+      <section className="px-6 max-w-5xl mx-auto w-full pt-12 flex flex-col md:flex-row gap-8 md:gap-16 select-none animate-slide-up">
+        <div className="md:w-1/3 flex flex-col gap-5">
+          <img
+            src="/damp-greyscale.svg"
+            alt="Mech DAMP Logo"
+            className="w-20 h-20 dark:invert transition-opacity duration-300 hover:opacity-80"
+          />
+          <div className="flex flex-col gap-2">
+            <span className="text-[10px] font-bold text-[var(--text-muted)] uppercase tracking-widest">About DAMP</span>
+            <h2 className="text-2xl md:text-3xl font-extrabold text-[var(--text)] tracking-tight">
+              The bridge between experience and confusion.
+            </h2>
+          </div>
         </div>
-        <div className="md:w-2/3 flex flex-col gap-6 text-sm md:text-base text-[var(--text-muted)] font-light leading-relaxed">
+        <div className="md:w-2/3 flex flex-col gap-6 text-sm md:text-base text-[var(--text-muted)] font-light leading-relaxed pt-2">
           <p className="text-[var(--text)] font-normal text-base md:text-lg leading-relaxed">
             Mechanical Engineering is more than just gears, levers, and late-night CAD struggles—it’s about navigating a maze of courses, projects, and opportunities.
           </p>
@@ -33,6 +37,11 @@ export default async function Home() {
           </p>
         </div>
       </section>
+
+      {/* Hero Section */}
+      <div className="border-t border-[var(--border)] pt-8">
+        <Hero coursesCount={courses.length} experiencesCount={totalExperiences} />
+      </div>
 
       {/* Info Sections */}
       <section className="px-6 max-w-5xl mx-auto w-full select-none border-t border-[var(--border)] pt-16">

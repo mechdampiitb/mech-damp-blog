@@ -12,7 +12,7 @@ export default function Footer() {
 
         <div className="flex gap-6 font-semibold uppercase tracking-wider">
           <Link href="/contribute" className="hover:text-[var(--text)] transition-colors">
-            Contribute a Review
+            Contribute
           </Link>
           <a
             href="https://www.me.iitb.ac.in"
